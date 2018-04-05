@@ -1,0 +1,43 @@
+server:
+    error:
+        whitelabel:
+            enabled: false
+    port: 8080
+
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+    rabbitmq:
+    # 10.24.10.225
+        host: 10.24.10.12
+        port: 5672
+    resources:
+        static-locations: /WEB-INF/static/
+
+# 邮件信息
+mail:
+    displayName: jtajgs@aliyun.com
+    from: jtajgs@aliyun.com
+    # smtp.jnyl-tech.com
+    smtpServer: smtp.aliyun.com
+    # zabbix@jnyl-tech.com
+    username: jtajgs@aliyun.com
+    # Zabbix@genertech
+    password: cm7635gq
+    fail:
+        exchange: mail-fail-exchange
+        queue: mail-fail-queue
+        to: jtajgs@aliyun.com
+    retry:
+        exchange: mail-retry-exchange
+        queue: mail-retry-queue
+    send:
+        exchange: mail-exchange
+        queue: mail-queue
+
+fastdfs:
+    tracker:
+        ip: 10.24.10.12:22122
+
